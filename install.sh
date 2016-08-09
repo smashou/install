@@ -14,7 +14,7 @@ apt-get update
 
 
 
-apt-get install ubuntu-restricted-extras nodejs npm nodejs-legacy ruby apache2 mysql-server  curl oracle-java7-installer phpmyadmin git vim  filezilla openvpn php5.6 php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-dev libapache2-mod-php5 php5.6-mcrypt php5.6-curl php5.6-cli php5.6-json php5.6-pear php5.6-xdebug php5.6-xsl php5.6-xmlrpc
+apt-get install ubuntu-restricted-extras nodejs npm nodejs-legacy ruby apache2 mysql-server  curl oracle-java7-installer phpmyadmin git vim  filezilla openvpn php5.6 php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-dev libapache2-mod-php5 php5.6-mcrypt php5.6-curl php5.6-cli php5.6-json php5.6-xdebug php5.6-xsl php5.6-xmlrpc
 
 pecl install intl
 
