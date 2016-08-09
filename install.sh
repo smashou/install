@@ -4,9 +4,20 @@ cd /tmp
 add-apt-repository ppa:webupd8team/java
 echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 94558F59
+# If necessary install php5.6 on Xubuntu Xenial
+aptitude purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
+add-apt-repository ppa:ondrej/php
+
+
 apt-get update
 
-apt-get install ubuntu-restricted-extras nodejs npm nodejs-legacy ruby skype apache2 mysql-server php5-mysql php5 libapache2-mod-php5 php5-mcrypt php-apc php5-curl php5-cli php5-json php5-intl curl oracle-java7-installer phpmyadmin git vim php5-xdebug php5-xsl php5-xmlrpc filezilla openvpn
+
+
+
+apt-get install ubuntu-restricted-extras nodejs npm nodejs-legacy ruby apache2 mysql-server  curl oracle-java7-installer phpmyadmin git vim  filezilla openvpn php5.6 php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-dev libapache2-mod-php5 php5.6-mcrypt php5.6-curl php5.6-cli php5.6-json php5.6-pear php5.6-xdebug php5.6-xsl php5.6-xmlrpc
+
+pecl install intl
+
 /usr/share/doc/libdvdread4/install-css.sh
 
 #Some stuff
