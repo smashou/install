@@ -1,30 +1,29 @@
 cd /tmp
 
-#JAVA for phpStorm etc...
-add-apt-repository ppa:webupd8team/java
+
+sudo add-apt-repository ppa:webupd8team/java
 echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 94558F59
-# If necessary install php5.6 on Xubuntu Xenial
-aptitude purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
-add-apt-repository ppa:ondrej/php
+
+#For uninstalling PHP 7
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 94558F59
+sudo aptitude purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
+sudo add-apt-repository ppa:ondrej/php
 
 
-apt-get update
+sudo apt-get update
 
+#generic stuff
+sudo apt-get install ubuntu-restricted-extras nodejs npm nodejs-legacy ruby apache2 mysql-server  curl oracle-java7-installer  git vim  filezilla openvpn p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller vlc
 
+#PHP5.6 stuff
+apt-get install phpmyadmin php-pear libapache2-mod-php5 php5.6 php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-dev php5.6-mcrypt php5.6-curl php5.6-cli php5.6-json php5.6-xdebug php5.6-xsl php5.6-xmlrpc
 
-
-apt-get install ubuntu-restricted-extras nodejs npm nodejs-legacy ruby apache2 mysql-server  curl oracle-java7-installer phpmyadmin git vim  filezilla openvpn php5.6 php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-dev libapache2-mod-php5 php5.6-mcrypt php5.6-curl php5.6-cli php5.6-json php5.6-xdebug php5.6-xsl php5.6-xmlrpc
 
 pecl install intl
 
-/usr/share/doc/libdvdread4/install-css.sh
 
-#Some stuff
-apt-get install gstreamer0.10-plugins-ugly gxine libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller vlc spotify-client
-
-
-curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
+#composer
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin
 
 #COMPOSER
 mv composer.phar /usr/local/bin/composer
@@ -49,12 +48,7 @@ sudo fc-cache -fv ~/.fonts
 ##PIMP MY GIT PROMPT
 git clone https://github.com/arialdomartini/oh-my-git.git ~/.oh-my-git && echo source ~/.oh-my-git/prompt.sh >> ~/.bashrc
 
-
-#Ubuntu tunning
-gsettings set com.canonical.indicator.session show-real-name-on-panel true
-
-#remove this fucking scrollbar and put a normal one.
-gsettings set com.canonical.desktop.interface scrollbar-mode normal
-
-#Some fun with spotify
-
+#Sublime
+cd /tmp
+wget https://download.sublimetext.com/sublime-text_build-3125_amd64.deb
+#Double click on deb file
